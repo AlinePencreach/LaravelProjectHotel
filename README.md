@@ -1,1 +1,1 @@
-# SymfonyProjectHotel
+# LaravelProjectHotel
