@@ -7,10 +7,21 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+     /**
+     * Get the Hostel associated with the user.
+     */
+    public function hostel(): HasOne
+    {
+        $hostel = User::find(1)->hostel;
+        return $this->hasOne(Hostel::class);
+    }
 
     /**
      * The attributes that are mass assignable.

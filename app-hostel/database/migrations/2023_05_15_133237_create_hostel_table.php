@@ -18,9 +18,6 @@ return new class extends Migration
             $table->string('description');
             $table->timestamps();
         });
-
-        
-
     }
 
     /**
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hostels');
+        Schema::dropIfExists('hostel');
     }
 };
